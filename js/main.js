@@ -15,26 +15,35 @@ plusMe.addEventListener('click', plus);
 startCount();
 
 function plus() {
-  // myInput is the steps (10 or 1
-  // count is the result and myInput.val is the step
-  count += myInput.value;
+  // myInput how much inc/dec by 10 or 1?
+  // count is the top number result and myInput.val is the step
+  count += Number(myInput.value);
   // render the result on the screen
-  myOutput();
+  myOutputDisplay();
 }
 
 function minus() {
-  count -= myInput.value;
+  count -= Number(myInput.value);
   // render the result on the screen
-  myOutput();
+  myOutputDisplay();
 }
 
-function myOutput() {
+// rendering the result on top of step number
+function myOutputDisplay() {
+  // calculated value is myResult
   myResult.textContent = count;
+  // if count is a neg than display in red color
+  if (count < 0) {
+    // apply .red {class="red"} to myResult
+    myResult.className = 'red';
+  } else {
+    myResult.className = '';
+  }
 }
 
-// write a function that assigns the input value
+// write a function that assigns the input value initialize the value for count (0) and input (1)
 function startCount() {
   count = 0;
   myInput.value = 1;
-  myOutput();
+  myOutputDisplay();
 }

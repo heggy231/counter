@@ -1,4 +1,43 @@
 /* this code makes it vertical horizontal center */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* ----- end of  box sizing https://css-tricks.com/box-sizing/ ---- */
+
+/* clearfix keeps following elements to come inside of floated elements */
+.clearfix:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+nav a, button, input, #plusMe { /* button for tap fat fingers 10mm (half inch), 40css px */
+  min-height: 48px;
+  min-width: 48px;
+
+}
+
+html {
+
+  /* makes the font size 10px in rem easy calculation 
+  browser overall font-size 16px > 16 * .625 = 10px
+  1.6 rem * 10px = 16px */
+  /* Usually default font-size of the browser is 16px. Setting font-size: 100% will make 1rem = 16px. But it will make calculations a little difficult. A better way is to set font-size: 62.5%. Because 62.5% of 16px is 10px. Which makes 1rem = 10px.
+  https://medium.com/code-better/css-units-for-font-size-px-em-rem-79f7e592bb97
+  */
+  font-size: 62.5%; /* 1em = 10px */
+  color: #474747; /* OUTER SPACE */
+  background-color: rgb(117, 161, 211); /* ANTI-FLASH WHITE */
+}
+/* catch all for overflow */
+img, embed, object, video, input {
+  max-width: 100%;
+}
+
 html, input, button {
   font-size: larger;
 }
@@ -6,6 +45,7 @@ input {
   text-align: center;
   color: black;
 }
+
 .flex-wrap { 
   display: flex;
   justify-content: center;
@@ -17,3 +57,28 @@ body {
   flex-direction: column;
 }
 
+.red {
+  color: red;
+}
+
+/* https://a11yproject.com/posts/never-remove-css-outlines/
+DONOT USE :focus { outline: none; }
+*/
+
+/* * {
+  outline: none;
+} */
+button {
+  height: 75px;
+  width: 75px;
+  font-size: 40px;
+  color: white;
+  background-color: darkgrey;
+  margin: 20px;
+  border-radius: 8px;
+}
+
+button:hover {
+  color: darkgrey;
+  background-color: white;
+}
