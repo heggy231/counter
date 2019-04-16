@@ -1,0 +1,19 @@
+/* this code makes it vertical horizontal center */
+html, input, button {
+  font-size: larger;
+}
+input {
+  text-align: center;
+  color: black;
+}
+.flex-wrap { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body {
+  min-height: 100vh;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
